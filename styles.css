@@ -88,6 +88,34 @@ body {
     background-color: #fff;
 }
 
+.mobile-tab {
+    flex: 1;
+    text-align: center;
+    padding: 14px 0;
+    border-bottom: 2px solid transparent;
+    color: #5f6368;
+    font-weight: 500;
+    cursor: pointer;
+    margin: 0 4px;
+    position: relative;
+}
+
+.mobile-tab:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    right: -4px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 60%;
+    width: 1px;
+    background-color: #e0e0e0;
+}
+
+.mobile-tab.active {
+    color: #1a73e8;
+    border-bottom-color: #1a73e8;
+}
+
 /* Widget Content */
 .widget-content {
     display: flex;
@@ -786,20 +814,8 @@ body {
         padding: 12px;
     }
     
-    .mobile-tab {
-        flex: 1;
-        text-align: center;
-        padding: 14px 0;
-        border-bottom: 2px solid transparent;
-        color: #5f6368;
-        font-weight: 500;
-        cursor: pointer;
-    }
-    
-    .mobile-tab.active {
-        color: #1a73e8;
-        border-bottom-color: #1a73e8;
-    }
+    /* Mobile tab styles are defined globally now */
+    /* No need to redefine basic properties */
     
     /* Mobile compose button - floating action button style */
     .compose-btn {
