@@ -100,7 +100,8 @@ function checkMobileView() {
         const widgetContainer = document.querySelector('.widget-container');
         
         if (isMobileView) {
-            widgetContainer.classList.add('mobile-view');
+            // In mobile view, we want to show the list by default (remove mobile-view class)
+            widgetContainer.classList.remove('mobile-view');
             
             // Also make sure the inbox tab is selected
             const tabs = document.querySelectorAll('.mobile-tab');
@@ -627,7 +628,10 @@ function renderEmailDetail(email) {
 
 // Go back to email list in mobile view
 function backToList() {
+    console.log("Going back to email list");
     document.querySelector('.widget-container').classList.remove('mobile-view');
+    // Optionally unselect the email
+    selectedEmail = null;
 }
 
 // Get icon for attachment based on file type
