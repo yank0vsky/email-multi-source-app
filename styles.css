@@ -86,15 +86,15 @@ body {
     display: flex;
     border-bottom: 1px solid #eaeaea;
     background-color: #fff;
-    justify-content: space-around;
+    justify-content: space-evenly;
     padding: 0 10px;
 }
 
 .mobile-tab {
     flex: 1;
     text-align: center;
-    padding: 14px 0;
-    border-bottom: 2px solid transparent;
+    padding: 14px 8px;
+    border-bottom: 3px solid transparent;
     color: #5f6368;
     font-weight: 500;
     cursor: pointer;
@@ -104,7 +104,7 @@ body {
 
 .mobile-tab.active {
     color: #1a73e8;
-    border-bottom-color: #1a73e8;
+    font-weight: 600; border-bottom: 3px solid #1a73e8;
 }
 
 /* Widget Content */
