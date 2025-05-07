@@ -1,0 +1,25 @@
+{
+  "providers": [
+    {
+      "id": "microsoft",
+      "name": "Microsoft Outlook",
+      "icon": "https://cdn-icons-png.flaticon.com/512/732/732223.png",
+      "domain": "outlook.com",
+      "authUrl": "https://login.microsoftonline.com/common/oauth2/v2.0/authorize"
+    },
+    {
+      "id": "google",
+      "name": "Gmail",
+      "icon": "https://cdn-icons-png.flaticon.com/512/2991/2991147.png",
+      "domain": "gmail.com",
+      "authUrl": "https://accounts.google.com/o/oauth2/v2/auth"
+    },
+    {
+      "id": "yahoo",
+      "name": "Yahoo Mail",
+      "icon": "https://cdn-icons-png.flaticon.com/512/5969/5969113.png",
+      "domain": "yahoo.com",
+      "authUrl": "https://api.login.yahoo.com/oauth2/request_auth"
+    }
+  ]
+} 

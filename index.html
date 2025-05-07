@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email MultiApp Widget</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="widget-container">
+        <div class="widget-header">
+            <div class="provider-section">
+                <div class="provider-logo" id="provider-logo"></div>
+                <div class="provider-name" id="provider-name">Email Provider</div>
+            </div>
+            <div class="header-actions">
+                <button id="refresh-btn" title="Refresh"><i class="fas fa-sync-alt"></i></button>
+                <button id="settings-btn" title="Settings"><i class="fas fa-cog"></i></button>
+            </div>
+        </div>
+        
+        <!-- Mobile tabs - only visible on small screens -->
+        <div class="mobile-tabs">
+            <div class="mobile-tab active" id="tab-inbox">Inbox</div>
+            <div class="mobile-tab" id="tab-sent">Sent</div>
+            <div class="mobile-tab" id="tab-drafts">Drafts</div>
+        </div>
+        
+        <div class="widget-content">
+            <!-- Email list section -->
+            <div class="email-list" id="email-list">
+                <!-- Search bar -->
+                <div class="search-container">
+                    <div class="search-input-wrapper">
+                        <i class="fas fa-search search-icon"></i>
+                        <input type="text" id="email-search" placeholder="Search emails...">
+                        <button id="clear-search" class="clear-search-btn"><i class="fas fa-times"></i></button>
+                    </div>
+                </div>
+                
+                <!-- Email items will be loaded here -->
+                <div class="loading-indicator">Loading emails...</div>
+            </div>
+            
+            <!-- Email detail section -->
+            <div class="email-detail" id="email-detail">
+                <div class="no-email-selected">
+                    <i class="far fa-envelope"></i>
+                    <p>Select an email to view</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="widget-footer">
+            <button id="compose-btn" class="compose-btn">
+                <i class="fas fa-pen"></i> <span class="compose-text">Compose</span>
+            </button>
+            <div class="footer-info">
+                <span id="email-count">0 emails</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Settings Modal -->
+    <div class="modal" id="settings-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Widget Settings</h2>
+                <button id="close-settings" class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="settings-group">
+                    <label for="provider-select">Email Provider:</label>
+                    <select id="provider-select">
+                        <option value="microsoft">Microsoft</option>
+                        <option value="google">Google</option>
+                        <option value="yahoo">Yahoo</option>
+                    </select>
+                </div>
+                <div class="settings-group">
+                    <label for="refresh-interval">Refresh Interval (minutes):</label>
+                    <select id="refresh-interval">
+                        <option value="5">5</option>
+                        <option value="10" selected>10</option>
+                        <option value="15">15</option>
+                        <option value="30">30</option>
+                    </select>
+                </div>
+                <div class="settings-group auth-section">
+                    <button id="auth-btn" class="auth-btn">Authenticate with Provider</button>
+                    <div id="auth-status">Not authenticated</div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="save-settings" class="save-btn">Save Settings</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html> 
